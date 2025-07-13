@@ -33,6 +33,7 @@ export default function App(){
     return(
         <ParentDiv>
             <Heading>Jokes List(refresh to see new jokes)</Heading>
+            <Heading><u><em>Click on the button to see the punchline</em></u></Heading>
             <Jokes jokes={jokes}/>
         </ParentDiv>
     )

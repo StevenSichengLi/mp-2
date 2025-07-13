@@ -9,8 +9,16 @@ const AllJokesDiv = styled.div`
     justify-content: space-evenly;
 `;
 
+const Category = styled.h2`
+    font-family: Papyrus, fantasy;
+    font-style: italic;
+    font-variant: small-caps;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 2%
+`;
 
-const SingleJokeDiv = styled.div<{ category: string }>`
+const SingleJokeDiv = styled.div<{ type: string }>`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,25 +36,30 @@ const SingleJokeDiv = styled.div<{ category: string }>`
     margin: 1%;
 
     background-color: ${(props) =>
-            props.category === "Pun" ? "lemonchiffon" : "black"};
+            props.type === "twopart" ? "black" : "lemonchiffon"};  // e.g. light blue vs dark gray
     color: ${(props) =>
-            props.category === "Pun" ? "black" : "white"};
-
-    font-size: clamp(0.8rem, 1.5vw, 1.4rem); /* ✅ responsive font scaling */
+            props.type === "twopart" ? "white" : "black"};
+    
     font-family: Papyrus, fantasy;
     font-style: italic;
     font-variant: small-caps;
     font-weight: bold;
     text-align: center;
+
+    // allows the text to wrap around if it is too long
+    word-break: break-word;
+    overflow-wrap: break-word;
+    overflow: auto;
+    white-space: normal;
 `;
 
 
 const Button = styled.button`
-    background-color: darkorange;
+    background-color: lightslategrey;
     font: italic small-caps bold calc(2px + 1vw) Papyrus, fantasy;`
 
 const Punchline = styled.p`
-    background-color: darkorange;
+    background-color: lightslategrey;
     padding: 2%;
 ;`
 
@@ -59,8 +72,8 @@ function JokeItem({joke}: { joke: JokeAttributes }) {
     const [show, setShow] = useState(false);
 
     return (
-        <SingleJokeDiv category={joke.category}>
-            <h2>Category: {joke.category}</h2>
+        <SingleJokeDiv type={joke.type}>
+            <Category>Category: {joke.category}</Category>
             {joke.type === "twopart" ? (
                 <>
                     <p>{clean(joke.setup)}</p>
