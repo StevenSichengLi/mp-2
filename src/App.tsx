@@ -32,7 +32,7 @@ export default function App(){
 
     return(
         <ParentDiv>
-            <Heading>Jokes List</Heading>
+            <Heading>Jokes List(refresh to see new jokes)</Heading>
             <Jokes jokes={jokes}/>
         </ParentDiv>
     )
