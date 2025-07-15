@@ -56,7 +56,9 @@ const SingleJokeDiv = styled.div<{ type: string }>`
 
 const Button = styled.button`
     background-color: lightslategrey;
-    font: italic small-caps bold calc(2px + 1vw) Papyrus, fantasy;`
+    font-size: calc(2px + 1px);
+    font: italic small-caps bold Papyrus, fantasy
+;`
 
 const Punchline = styled.p`
     background-color: lightslategrey;
