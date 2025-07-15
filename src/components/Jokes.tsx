@@ -30,7 +30,7 @@ const SingleJokeDiv = styled.div<{ type: string }>`
     flex-grow: 0;
     flex-shrink: 0;
     
-    min-height: 250px;
+    min-height: 20vw;
     max-width: 30%;
     padding: 2%;
     margin: 1%;
