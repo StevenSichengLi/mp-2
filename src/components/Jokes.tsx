@@ -39,7 +39,8 @@ const SingleJokeDiv = styled.div<{ type: string }>`
             props.type === "twopart" ? "black" : "lemonchiffon"};  // e.g. light blue vs dark gray
     color: ${(props) =>
             props.type === "twopart" ? "white" : "black"};
-    
+
+    font-size: calc(16px + 6px);
     font-family: Papyrus, fantasy;
     font-style: italic;
     font-variant: small-caps;
@@ -56,7 +57,7 @@ const SingleJokeDiv = styled.div<{ type: string }>`
 
 const Button = styled.button`
     background-color: lightslategrey;
-    font-size: calc(14px + 6px);
+    font-size: calc(16px + 6px);
     font-family: Papyrus, fantasy;
     font-style: italic;
     font-variant: small-caps;
